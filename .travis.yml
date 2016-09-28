@@ -6,7 +6,7 @@ script:
   - eval "$(ssh-agent -s)"
   - ssh-add ~/key
   - cat known_hosts >> ~/.ssh/known_hosts
-  - ssh jande112@unix11.csc.calpoly.edu 'bash -c "cd ~/www/CPE-123 && git pull origin && chmod -R 755 ."'
+  - ssh jande112@unix11.csc.calpoly.edu 'bash -c "cd ~/www/CPE-123 && git reset --hard && git pull origin && chmod -R 755 ."'
 branches:
   only:
     - master
