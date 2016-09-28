@@ -2,6 +2,7 @@ language: generic
 sudo: false
 script:
   - openssl aes-256-cbc -k "$KEY_PASS" -in key.enc -out key -d
+  - chmod 600 key
   - eval "$(ssh-agent -s)"
   - ssh-add key
   - cat known_hosts >> ~/.ssh/known_hosts
