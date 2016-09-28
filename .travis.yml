@@ -3,6 +3,7 @@ sudo: false
 script:
   - openssl aes-256-cbc -k "$KEY_PASS" -in key.enc -out key -d
   - ssh-add key
+  - cat known_hosts >> ~/.ssh/known_hosts
   - git remote add prod ssh://jande112@unix11.csc.calpoly.edu/home/www/CPE-123
   - git push prod master
 branches:
