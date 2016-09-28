@@ -1,0 +1,84 @@
+.bg {
+  background: #009688;
+  min-height: auto;
+}
+
+.fg {
+  background: #FFFFFF;
+}
+
+.header {
+  font-weight: 500;
+  font-size: 2.0em;
+  color: rgba(0,0,0,0.70);
+  width: 80%;
+  max-width: 800px;
+  min-width: 460px;
+  text-align: center;
+  padding: 10px;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.sub_header {
+  font-weight: 500;
+  color: rgba(0,0,0,0.65);
+  width: 175px;
+  text-align: center;
+  padding: 5px;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+.mini_header {
+  font-weight: 500;
+  color: rgba(0,0,0,0.65);
+  width: 125px;
+  font-size: 0.75em;
+  text-align: center;
+  padding: 5px;
+  margin: 10px;
+}
+
+.headers {
+  text-align: center;
+}
+.center {
+  margin: 10px auto;
+}
+
+.table {
+  width: 50%;
+  min-width: 300px;
+  font-size: 1.0em;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.mdl-data-table th {
+  font-weight: 500;
+  font-size: 1.4em;
+  color: rgba(0,0,0,0.65);
+  text-align: center;
+}
+
+.mdl-data-table a {
+  width: 100%;
+  height: 100;
+  position: absolute;;
+  top: 25%;
+  left: 20px;
+}
+
+.button {
+  text-align: center;
+  width: 115px;
+}
+
+.canvas {
+  width: 500px;
+}
