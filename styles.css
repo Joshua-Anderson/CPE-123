@@ -25,11 +25,14 @@
 .sub_header {
   font-weight: 500;
   color: rgba(0,0,0,0.65);
-  width: 175px;
   text-align: center;
   padding: 5px;
   margin: 10px;
   vertical-align: middle;
+}
+
+.name {
+  width: 175px;
 }
 
 .mini_header {
