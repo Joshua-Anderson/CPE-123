@@ -35,6 +35,16 @@
   width: 175px;
 }
 
+.scales {
+  width: 175px;
+}
+
+.simgs {
+  width: 400px;
+  height: 400px;
+  display: block;
+}
+
 .mini_header {
   font-weight: 500;
   color: rgba(0,0,0,0.65);
