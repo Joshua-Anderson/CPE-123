@@ -19,11 +19,16 @@ function setup() {
 }
 
 function draw() {
+  noStroke();
   push();
     translate(260, 30);
     if (frame>150) {
       fill(black);
-      rect(0,-30,400,200);
+      rect(-260,-30,660,200);
+      rect(-260,170,260,250);
+    } else {
+      fill("#FFFFFF");
+      rect(-260,170,260,250);
     }
     towers();
     castle();
@@ -42,8 +47,6 @@ function draw() {
       frame = 1;
     }
   pop();
-  fill("#FFFFFF");
-  rect(0,0,260,430)
   cyclops();
 }
 
@@ -207,7 +210,7 @@ function drawSky() {
     percent = i/height*2.5;
     stroke(calcInterpolation(startRed, percent), calcInterpolation(startGreen, percent), calcInterpolation(startBlue, percent));
     strokeWeight(1);
-    line(0,i,400,i);
+    line(-260,i,400,i);
   }
 }
 

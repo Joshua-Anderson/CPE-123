@@ -77,7 +77,11 @@ function cyclops() {
 	//Club
 		//Transformations
 	push();
-		translate(xDF, yDF+clubdrop);
+		var pos = yDF+clubdrop;
+		if(pos > 100) {
+			pos = 100;
+		}
+		translate(xDF, pos);
 		scale(scaleDF);
 	fill(90, 145, 13);
 	beginShape();
@@ -166,7 +170,8 @@ function cyclops() {
 	ellipse(180, 340, 7);
 	ellipse(230, 340, 7);
 
-	if (clubdrop<110) {
-		clubdrop++;
+	clubdrop++;
+	if (clubdrop>325) {
+		clubdrop=1;
 	}
 }
