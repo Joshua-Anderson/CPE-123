@@ -1,7 +1,12 @@
+// By Joshua Anderson and Joshua Boe
+var clubdrop = 1;
+
 function cyclops() {
 	var scaleDF = 1;
 	var xDF = 0;
 	var yDF = 0;
+
+
 
 	translate(-100, -160);
 
@@ -72,7 +77,7 @@ function cyclops() {
 	//Club
 		//Transformations
 	push();
-		translate(xDF, yDF);
+		translate(xDF, yDF+clubdrop);
 		scale(scaleDF);
 	fill(90, 145, 13);
 	beginShape();
@@ -91,7 +96,6 @@ function cyclops() {
 	fill(251, 205, 0);
 	ellipse(330, 433, 20, 10);
 	pop();
-
 
 	//Shoulder and Arm (Right)
 	fill(252, 162, 140);
@@ -161,4 +165,8 @@ function cyclops() {
 	fill(222, 116, 0);
 	ellipse(180, 340, 7);
 	ellipse(230, 340, 7);
+
+	if (clubdrop<110) {
+		clubdrop++;
+	}
 }

@@ -1,28 +1,49 @@
+// By Joshua Anderson and Joshua Boe
 var gray = "#616161";
 var lightRed = "#EF5350";
 var brown ="#5d4037";
 var black = "#000000"
 
+// frame of the draw loop
+var frame = 1;
+
 function setup() {
   var canvas = createCanvas(660, 430);
   canvas.parent('canvas');
-}
-
-function draw() {
-  background("#FFFFFF")
   push();
     translate(260, 30);
     drawSky();
     ground();
     hills();
+  pop();
+}
+
+function draw() {
+  push();
+    translate(260, 30);
+    if (frame>150) {
+      fill(black);
+      rect(0,-30,400,200);
+    }
     towers();
     castle();
     towerTops();
-    castleDetails();
+    castleDetails(frame);
     drawSquiggle();
-    drawPerson(160, 347, 1, false);
-    drawPerson(240, 347, 1, true);
+    if(frame<200) {
+      drawPerson(160, 347, 1-frame/200, false);
+      drawPerson(240, 347, 1-frame/200, true);
+    }
+    if (frame < 325) {
+      frame++;
+    } else {
+      // repeat animation
+      drawSky();
+      frame = 1;
+    }
   pop();
+  fill("#FFFFFF");
+  rect(0,0,260,430)
   cyclops();
 }
 
@@ -106,18 +127,25 @@ function pillar(x) {
   rect(x, 65, 90, 105);
 }
 
-function castleDetails() {
+function castleDetails(frame) {
   // door
   noStroke();
   fill(gray);
+  var offset = 0;
+  if (frame > 75) {
+    offset = (frame-75)/5;
+    if (offset>50) {
+      offset = 50;
+    }
+  }
   arc(200, 295, 100, 100, PI, TWO_PI);
-  rect(150, 295, 100, 10);
+  rect(150, 295, 100, 10+offset);
   fill(lightRed);
-  rect(150, 305, 100, 15);
+  rect(150, 305+offset, 100, 15);
   fill(brown);
-  rect(190, 305, 20, 15);
+  rect(190, 305+offset, 20, 15);
   fill("#FFFFFF");
-  rect(150, 320, 100, 50);
+  rect(150, 320+offset, 100, 50-offset);
 
   // logo above door
   fill("#FFEB3B");
