@@ -95,16 +95,18 @@ function sub(x,y, s) {
 }
 
 function mousePressed() {
-  invasion = !invasion;
-  if(invasion) {
-    subPos = [mainSub];
+  if (mouseX > mainSub.X-50 && mouseX < mainSub.X+200  && mouseY > mainSub.Y-50 && mouseY < mainSub.Y + 50) {
+    invasion = !invasion;
+    if(invasion) {
+      subPos = [mainSub];
 
-    for (var i=0; i < 10; i++) {
-      var newSub = {"X": random(250), "Y": random(400), "S": 0.25, "SPD": random(1,3)};
-      subPos.push(newSub)
+      for (var i=0; i < 10; i++) {
+        var newSub = {"X": random(250), "Y": random(400), "S": 0.25, "SPD": random(1,3)};
+        subPos.push(newSub)
+      }
+    } else {
+      mainSub = {"X": 160, "Y": 200, "S": 1, "SPD": 2};
+      subPos = [mainSub];
     }
-  } else {
-    mainSub = {"X": 160, "Y": 200, "S": 1, "SPD": 2};
-    subPos = [mainSub];
   }
 }
