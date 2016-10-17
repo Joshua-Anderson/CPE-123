@@ -1,12 +1,12 @@
-var xGun = 0;
-var yGun = 0;
-var scaleGun = 1;
+var xGun = 130;
+var yGun = 25;
+var scaleGun = 0.6;
 var count = 0;
-var xPen = 105;
-var yPen = 40;
-var scalePen = 1;
-var rot = 0;
-var prot = 0;
+var xPen = 195;
+var yPen = 50;
+var scalePen = 0.6;
+var rotGun = 0;
+var rotPen = 0;
 
 function gun() {
 
@@ -16,15 +16,7 @@ function gun() {
 
 	noStroke();
 
-	drawGun(xGun, yGun, scaleGun);
-
-	if (count == 1) {
-
-	drawPenguin(xPen, yPen, scalePen);
-	xPen -= 3;
-	yPen -= 3;
-
-	}
+	drawGun(xGun, yGun, scaleGun, rotGun, xPen, yPen, scalePen, rotPen);
 
 }
 
@@ -37,7 +29,7 @@ function drawGun(x, y, sc, rot, px, py, psc, prot) {
 		noStroke();
 		rotate(rot);
 
-		fill(0);
+		fill(110, 147, 232, 200);
 		beginShape();
 			vertex(458.7,415.3);
 			vertex(462.3,407.7);
@@ -98,7 +90,7 @@ function drawGun(x, y, sc, rot, px, py, psc, prot) {
 			vertex(480.3,440.7);
 		endShape();
 
-		fill(255);
+		fill(0);
 		beginShape();
 			vertex(498.2,490.5);
 			vertex(491.8,483.5);
@@ -137,6 +129,8 @@ function drawGun(x, y, sc, rot, px, py, psc, prot) {
 		endShape();
 
 	pop();
+
+	if (count == 1) {
 
 	push();
 
@@ -254,16 +248,25 @@ function drawGun(x, y, sc, rot, px, py, psc, prot) {
 			vertex(291.7,283.8);
 			vertex(291.7,281.6);
 		endShape();
+
+		xPen -= 3;
+		yPen -= 3;
+
+		if (xPen < -65) {
+			count = 0;
+		}
+}
+
 }
 
 function mouseClicked() {
 
 	count = 0;
 
-	if (mouseX > 470 && mouseX < 507 && mouseY > 475 && mouseY < 518) {
-		var xPen = 105;
-		var yPen = 40;
-		var scalePen = 1;
+	if (mouseX > 400 && mouseX < 500 && mouseY > 300 && mouseY < 400) {
+		xPen = 195;
+		yPen = 50;
+		scalePen = 0.6;
 		count = 1;
 	}
 }
