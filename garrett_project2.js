@@ -16,49 +16,6 @@ function gun() {
 
 	noStroke();
 
-	for (var i = 0; i < 600; i++) {
-
-		fill(red, green, blue);
-		rect(0, i, 600, 1);
-		red += 0.32333333333;
-		green += 0.03166666666;
-
-	}
-
-	fill(165, 165, 165, 165);
-	beginShape();
-		curveVertex(-20, 240);
-		curveVertex(0, 312);
-		curveVertex(50, 325);
-		curveVertex(100, 300);
-		curveVertex(175, 280);
-		curveVertex(205, 220);
-		curveVertex(188, 138);
-		curveVertex(212, 63);
-		curveVertex(200, 0);
-		curveVertex(175, -20);
-	endShape();
-	triangle(0, 0, 0, 312, 200, 0);
-
-	beginShape();
-		curveVertex(200, 10);
-		curveVertex(100, 0);
-		curveVertex(40, 25);
-		curveVertex(15, 88);
-		curveVertex(40, 150);
-		curveVertex(50, 220);
-		curveVertex(120, 255);
-		curveVertex(190, 238);
-		curveVertex(210, 238);
-		curveVertex(275, 255);
-		curveVertex(345, 240);
-		curveVertex(430, 145);
-		curveVertex(480, 130);
-		curveVertex(532, 90);
-		curveVertex(580, 0);
-		curveVertex(550, -30);
-	endShape();
-
 	drawGun(xGun, yGun, scaleGun);
 
 	if (count == 1) {
