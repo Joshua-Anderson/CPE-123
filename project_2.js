@@ -6,6 +6,10 @@ var subPos = [];
 var invasion = false;
 var mainSub = {"X": 160, "Y": 200, "S": 1, "SPD": 2};
 
+var planetGreen = 0;
+var planetBlue = 255;
+var planetRed = 0;
+
 function setup() {
   var canvas = createCanvas(500, 400);
   canvas.parent('canvas');
@@ -40,9 +44,15 @@ function planet() {
   for(var i = maxRadius; i>minRadius; i--) {
     var percent = (i-minRadius)/(maxRadius-minRadius);
     var color = (256*percent)-1;
-    fill(color,color,255);
+    fill(calcColor(planetRed, percent),calcColor(planetGreen, percent),calcColor(planetBlue, percent));
     ellipse(-750, 200,i,i);
   }
+}
+
+function calcColor(color, percent) {
+  // color 0-255, shift to 1-256
+  var range = 257 - color;
+  return color + (range*percent) - 1;
 }
 
 function stars() {
@@ -109,5 +119,9 @@ function mousePressed() {
       mainSub = {"X": 160, "Y": 200, "S": 1, "SPD": 2};
       subPos = [mainSub];
     }
+  } else if(mouseX > 0 && mouseX < 200 && mouseY > 0 && mouseY < 400) {
+    planetRed = random(255);
+    planetGreen= random(255);
+    planetBlue = random(255);
   }
 }
