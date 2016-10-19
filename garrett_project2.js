@@ -249,10 +249,12 @@ function drawGun(x, y, sc, rot, px, py, psc, prot) {
 			vertex(291.7,281.6);
 		endShape();
 
-		xPen -= 3;
-		yPen -= 3;
+		xPen -= 10;
+		yPen -= 1;
 
-		if (xPen < -65) {
+		rotPen -= PI/300;
+
+		if (xPen < -250) {
 			count = 0;
 		}
 }
@@ -263,9 +265,10 @@ function mouseClicked() {
 
 	count = 0;
 
-	if (mouseX > 400 && mouseX < 500 && mouseY > 300 && mouseY < 400) {
+	if (mouseX > 400 && mouseX < 500 && mouseY > 275 && mouseY < 400) {
 		xPen = 195;
 		yPen = 50;
+		rotPen = 0;
 		scalePen = 0.6;
 		count = 1;
 	}
