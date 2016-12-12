@@ -10,7 +10,7 @@ var playing = true;
 
 function preload()
 {
-	//space = loadImage('pics/final/space.jpg');
+	space = loadImage('pics/final/space.jpg');
 	pressStart = loadFont('fonts/PressStart2P.ttf');
 }
 
@@ -23,22 +23,22 @@ function setup()
 
 	drawAliens();
 
-	//space.loadPixels();
-	//for (var x = 0; x < space.width; x++)
-	//{
-	//	for (var y = 0; y < space.height; y++) {
-	//		var pixel = space.get(x, y);
-	//		var bright = brightness(pixel);
-	//		if (pixel[0] < 60 && pixel[1] < 60 && pixel[2] < 60)
-	//		{
-	//			space.set(x, y, [0, 0, 0, 0]);
-	//			continue;
-	//		}
-	//		bright = Math.round(bright / 20) * 51;
-	//		space.set(x, y, [bright-50, bright-50, bright, 255]);
-	//	}
-	//}
-	//space.updatePixels();
+	space.loadPixels();
+	for (var x = 0; x < space.width; x++)
+	{
+		for (var y = 0; y < space.height; y++) {
+			var pixel = space.get(x, y);
+			var bright = brightness(pixel);
+			if (pixel[0] < 60 && pixel[1] < 60 && pixel[2] < 60)
+			{
+				space.set(x, y, [0, 0, 0, 0]);
+				continue;
+			}
+			bright = Math.round(bright / 20) * 51;
+			space.set(x, y, [bright-50, bright-50, bright, 255]);
+		}
+	}
+	space.updatePixels();
 }
 
 
@@ -125,7 +125,7 @@ function draw()
 	{
 		background(0, 0, 0);
 
-		//image(space, 0, 0);
+		image(space, 0, 0);
 
 
 		//stroke(255,0,0);
@@ -239,6 +239,7 @@ function mouseClicked()
 		bullets = [];
 		aliens = [];
 		alienBullets = [];
+		deadAliens = [];
 		alienKills = 0;
 		playing = true;
 		drawAliens();
