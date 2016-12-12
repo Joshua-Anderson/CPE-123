@@ -85,10 +85,9 @@ function draw()
 		{
 			aliens[i].update();
 			aliens[i].render();
-			if (aliens[i].locY > height-50)
+			if (aliens[i].locY > height-100)
 			{
 				playing = false;
-				console.log("yes");
 			}
 		}
 
